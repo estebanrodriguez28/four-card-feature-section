@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+.header {
+  text-align: center;
+
+  &__title {
+    font-size: 1.5rem;
+    margin: 1rem 0rem;
+    color: $grey-500;
+  }
+
+  &__description {
+    color: $grey-500;
+    inline-size: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .header {
+    &__description {
+      inline-size: 500px;
+    }
+    &__title {
+      font-size: 2rem;
+    }
+  }
+}

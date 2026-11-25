@@ -1,0 +1,20 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 30px;
+  min-height: 100dvh;
+  padding-top: 7vh;
+}
+
+@media screen and (min-width: 992px) {
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+
+    min-height: 70vh;
+    max-width: 85vw;
+    margin: 0 auto;
+  }
+}

@@ -35,4 +35,104 @@ body {
   padding: 2rem;
 }
 
+.header {
+  text-align: center;
+}
+.header__title {
+  font-size: 1.5rem;
+  margin: 1rem 0rem;
+  color: hsl(234, 12%, 34%);
+}
+.header__description {
+  color: hsl(234, 12%, 34%);
+  inline-size: 300px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 992px) {
+  .header__description {
+    inline-size: 500px;
+  }
+  .header__title {
+    font-size: 2rem;
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  box-shadow: 0px 10px 40px -20px hsl(212, 6%, 44%);
+  padding: 2rem 2rem 8rem 2rem;
+  border-top: 4px solid;
+}
+.card--karma {
+  border-color: hsl(34, 97%, 64%);
+}
+.card--supervisor {
+  border-color: hsl(180, 62%, 55%);
+}
+.card--team-builder {
+  border-color: hsl(0, 78%, 62%);
+}
+.card--calculator {
+  border-color: hsl(212, 86%, 64%);
+}
+.card__title {
+  color: hsl(234, 12%, 34%);
+  margin-bottom: 10px;
+}
+.card__text {
+  color: hsl(212, 6%, 44%);
+}
+.card__icon {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+@media screen and (min-width: 922px) {
+  .card--karma {
+    grid-column: 2;
+    grid-row: 5/9;
+  }
+  .card--supervisor {
+    grid-column: 1;
+    grid-row: 3/7;
+  }
+  .card--team-builder {
+    grid-column: 2;
+    grid-row: 1/5;
+  }
+  .card--calculator {
+    grid-column: 3;
+    grid-row: 3/7;
+  }
+}
+.attribution {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 30px;
+  min-height: 100dvh;
+  padding-top: 7vh;
+}
+
+@media screen and (min-width: 992px) {
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    min-height: 70vh;
+    max-width: 85vw;
+    margin: 0 auto;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
