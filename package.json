@@ -4,7 +4,8 @@
   "description": "![Design preview for the Four card feature section coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "sass": "sass -w scss/main.scss css/style.css"
+    "sass-watch": "sass -w scss/main.scss css/style.css",
+    "sass": "sass scss/main.scss css/style.css"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/estebanrodriguez28/four-card-feature-section/issues"
   },
-  "homepage": "https://github.com/estebanrodriguez28/four-card-feature-section#readme"
+  "homepage": "https://github.com/estebanrodriguez28/four-card-feature-section#readme",
+  "devDependencies": {
+    "sass": "^1.108.2"
+  }
 }

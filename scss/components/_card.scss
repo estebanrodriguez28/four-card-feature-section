@@ -3,12 +3,12 @@
 .card {
   display: flex;
   flex-direction: column;
-  position: relative;
   background-color: $white;
   border-radius: 10px;
   box-shadow: 0px 10px 40px -20px $grey-400;
-  padding: 2rem 2rem 8rem 2rem;
+  padding: 2rem;
   border-top: 4px solid;
+  min-height: 16rem;
 
   &--karma {
     border-color: $orange;
@@ -29,20 +29,22 @@
   &__title {
     color: $grey-500;
     margin-bottom: 10px;
+    font-weight: 600;
   }
 
   &__text {
     color: $grey-400;
+    font-weight: 400;
   }
 
   &__icon {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
+    width: 60px;
+    margin-top: auto;
+    align-self: flex-end;
   }
 }
 
-@media screen and (min-width: 922px) {
+@media screen and (min-width: $desktop-breakpoint) {
   .card {
     // lay out the cards in the grid on desktop
     &--karma {

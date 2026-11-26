@@ -10,29 +10,14 @@ img {
 }
 
 body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
   font-size: 15px;
-}
-
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
 }
 
 body {
   padding: 2rem;
+  background-color: hsl(0, 0%, 100%);
 }
 
 .header {
@@ -42,16 +27,21 @@ body {
   font-size: 1.5rem;
   margin: 1rem 0rem;
   color: hsl(234, 12%, 34%);
+  font-weight: 200;
+}
+.header__title--bold {
+  font-weight: 600;
 }
 .header__description {
   color: hsl(234, 12%, 34%);
-  inline-size: 300px;
+  font-weight: 400;
+  max-inline-size: 300px;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 992px) {
   .header__description {
-    inline-size: 500px;
+    max-inline-size: 500px;
   }
   .header__title {
     font-size: 2rem;
@@ -60,12 +50,12 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  position: relative;
   background-color: hsl(0, 0%, 100%);
   border-radius: 10px;
   box-shadow: 0px 10px 40px -20px hsl(212, 6%, 44%);
-  padding: 2rem 2rem 8rem 2rem;
+  padding: 2rem;
   border-top: 4px solid;
+  min-height: 16rem;
 }
 .card--karma {
   border-color: hsl(34, 97%, 64%);
@@ -82,17 +72,19 @@ body {
 .card__title {
   color: hsl(234, 12%, 34%);
   margin-bottom: 10px;
+  font-weight: 600;
 }
 .card__text {
   color: hsl(212, 6%, 44%);
+  font-weight: 400;
 }
 .card__icon {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
+  width: 60px;
+  margin-top: auto;
+  align-self: flex-end;
 }
 
-@media screen and (min-width: 922px) {
+@media screen and (min-width: 992px) {
   .card--karma {
     grid-column: 2;
     grid-row: 5/9;
@@ -118,20 +110,17 @@ body {
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
   gap: 30px;
-  min-height: 100dvh;
   padding-top: 7vh;
+  width: min(35rem, 100%);
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 992px) {
   .card-grid {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    min-height: 70vh;
-    max-width: 85vw;
-    margin: 0 auto;
+    width: min(70rem, 100%);
   }
 }
 
