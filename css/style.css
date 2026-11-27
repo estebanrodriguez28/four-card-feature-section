@@ -86,20 +86,16 @@ body {
 
 @media screen and (min-width: 992px) {
   .card--karma {
-    grid-column: 2;
-    grid-row: 5/9;
+    grid-area: karma;
   }
   .card--supervisor {
-    grid-column: 1;
-    grid-row: 3/7;
+    grid-area: supervisor;
   }
   .card--team-builder {
-    grid-column: 2;
-    grid-row: 1/5;
+    grid-area: team-builder;
   }
   .card--calculator {
-    grid-column: 3;
-    grid-row: 3/7;
+    grid-area: calculator;
   }
 }
 .attribution {
@@ -112,14 +108,14 @@ body {
   grid-template-columns: 1fr;
   gap: 30px;
   padding-top: 7vh;
-  width: min(35rem, 100%);
+  width: min(25rem, 100%);
   margin: 0 auto;
 }
 
 @media screen and (min-width: 992px) {
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: ".team-builder." "supervisor team-builder calculator" "supervisor karma calculator" ". karma .";
     width: min(70rem, 100%);
   }
 }

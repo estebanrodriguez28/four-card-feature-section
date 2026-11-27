@@ -5,14 +5,18 @@
   grid-template-columns: 1fr;
   gap: 30px;
   padding-top: 7vh;
-  width: min(35rem, 100%);
+  width: min(25rem, 100%);
   margin: 0 auto;
 }
 
 @media screen and (min-width: $desktop-breakpoint) {
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas:
+      ".team-builder."
+      "supervisor team-builder calculator"
+      "supervisor karma calculator"
+      ". karma .";
     width: min(70rem, 100%);
   }
 }
