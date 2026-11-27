@@ -317,6 +317,8 @@ VSCode has a useful feature to preview what your markdown for the README looks l
 
 Step one, open your README file then you should see these icons on the top right of VSCode:
 ![](./images/preview-markdown.png)
+\
+\
 The first icon allows you to open the preview of the README, the second icon opens the preview side by side with your README in Markdown:
 ![](./images/preview-sidebyside.png)
 
