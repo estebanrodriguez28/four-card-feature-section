@@ -115,7 +115,7 @@ body {
 @media screen and (min-width: 992px) {
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: ".team-builder." "supervisor team-builder calculator" "supervisor karma calculator" ". karma .";
+    grid-template-areas: ". team-builder ." "supervisor team-builder calculator" "supervisor karma calculator" ". karma .";
     width: min(70rem, 100%);
   }
 }

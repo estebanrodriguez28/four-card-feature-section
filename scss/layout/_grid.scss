@@ -13,7 +13,7 @@
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-      ".team-builder."
+      ". team-builder ."
       "supervisor team-builder calculator"
       "supervisor karma calculator"
       ". karma .";
