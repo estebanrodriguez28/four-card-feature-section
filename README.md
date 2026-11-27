@@ -128,6 +128,8 @@ But that wouldn't work because the start and end column or rows you set on grid 
 > [!TIP]
 > Use the repeat function in css instead of having to write out multiple fr units to create columns or rows.
 
+---
+
 Back to BEM, I was unsure of how to use BEM for the text at the top of the page. For the card it's easy, the card is the block everything inside it is an element (or modifier). But what about for the text? What would the block be exactly?
 
 Well I ended up making the block a header. I guess this works, I am still getting used to BEM, I am curious for larger projects how BEM would be used and what to name something if you are not sure what the block would be.
@@ -176,7 +178,7 @@ Initially I tried to do something like this where I created three columns and th
 }
 ```
 
-After reading through documentation (linked in the resources section) without being closer to a solution, I finally decidede to look up some example of how to use grid. One example, from freefrontend, gave me the idea of splitting the grid container into several more rows. With more rows I could make the cards to the side overlap some of the rows from the cards in the middle while still being in their own column.
+After reading through documentation (linked in the resources section) without being closer to a solution, I finally decided to look up some example of how to use grid. One example, from freefrontend, gave me the idea of splitting the grid container into several more rows. With more rows I could make the cards to the side overlap some of the rows from the cards in the middle while still being in their own column.
 
 ```scss
 // scss/layout/grid.scss
@@ -247,7 +249,7 @@ The fourth parameter is the spread, how large to make the shadow. In the design,
 
 ---
 
-Initially for the card's icon I used absolute positioning (`position: abosolute`) and the bottom and right properties (`bottom:0; right:0`) with card set to `position: relative`. I used Claude to review my project and pointed out a better way was to set the card to be a flex container then use `margin-top: auto` to move the icon to the bottom then set `align-self: flex-end` to move it to the very right.
+Initially for the card's icon I used absolute positioning (`position: absolute`) and the bottom and right properties (`bottom:0; right:0`) with card set to `position: relative`. I used Claude to review my project and pointed out a better way was to set the card to be a flex container then use `margin-top: auto` to move the icon to the bottom then set `align-self: flex-end` to move it to the very right.
 
 ```scss
 .card {
