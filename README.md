@@ -332,7 +332,7 @@ One was to use grid areas, on the grid container we can define a grid area with 
 
 Then on the grid item's you assign them the `grid-area` that the item corresponds to from the `grid-template-areas` in the grid container. Grid items can span multiple rows by writing the same word on more than one line in `grid-template-areas` or multiple times in the same line to span columns.
 
-The pro of this method is that it's readeable, looking at the `grid-template-areas` on the grid container shows the layout clearly with words instead of row lines or columns. Grid areas are useful when you know how many rows and columns you need, row lines or columns can be more useful when you don't or need a lot.
+The pro of this method is that it's readable, looking at the `grid-template-areas` on the grid container shows the layout clearly with words instead of row lines or columns. Grid areas are useful when you know how many rows and columns you need, row lines or columns can be more useful when you don't or need a lot.
 
 ```scss
 @media screen and (min-width: $desktop-breakpoint) {
