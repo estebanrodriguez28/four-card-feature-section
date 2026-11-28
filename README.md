@@ -324,9 +324,96 @@ Step one, open your README file then you should see these icons on the top right
 The first icon allows you to open the preview of the README, the second icon opens the preview side by side with your README in Markdown:
 ![](./images/preview-sidebyside.png)
 
+---
+
+I was curious what other ways I could create the desktop design with css grid. The way I did works but I used more rows than I needed to. There were two other ways to create the desktop design that Claude gave.
+
+One was to use grid areas, on the grid container we can define a grid area with `grid-template-areas` using words. Each line or quotes is a row and each word within that row is a column. A dot represents an empty cell. The spacing in the row does not create new columns so we can add spaces to make the `grid-template-areas` look like the layout in the design. Note you still need to specify `grid-template-columns` and use fr units to make sure the grid items take up equal space.
+
+Then on the grid item's you assign them the `grid-area` that the item corresponds to from the `grid-template-areas` in the grid container. Grid items can span multiple rows by writing the same word on more than one line in `grid-template-areas` or multiple times in the same line to span columns.
+
+The pro of this method is that it's readeable, looking at the `grid-template-areas` on the grid container shows the layout clearly with words instead of row lines or columns. Grid areas are useful when you know how many rows and columns you need, row lines or columns can be more useful when you don't or need a lot.
+
+```scss
+@media screen and (min-width: $desktop-breakpoint) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      ".          team-builder  ."
+      "supervisor team-builder  calculator"
+      "supervisor    karma      calculator"
+      ".             karma      .";
+    width: min(70rem, 100%);
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .card {
+    // lay out the cards in the grid on desktop
+    &--karma {
+      grid-area: karma;
+    }
+
+    &--supervisor {
+      grid-area: supervisor;
+    }
+
+    &--team-builder {
+      grid-area: team-builder;
+    }
+
+    &--calculator {
+      grid-area: calculator;
+    }
+  }
+}
+```
+
+The second solution was to use two rows, have the cards on the sides span both rows with the cards in the middle on separate rows. By default grid items will stretch to fill the columns and rows they are placed in. However we can align grid items in different ways. For the one's on the side we dont want them to span both rows, instead we want to center them in between the two rows which can be done with `align-self: center`. When you set `align-self` to a grid item other than stretch, the default stretch gets overidden and the grid item's height (or width with `justify-items`) will shrink to fit the content.
+
+```scss
+@media screen and (min-width: $desktop-breakpoint) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: min(70rem, 100%);
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .card {
+    // lay out the cards in the grid on desktop
+    &--karma {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    &--supervisor {
+      grid-column: 1;
+      grid-row: 1/3;
+      // centers this grid item vertically in the rows
+      align-self: center;
+    }
+
+    &--team-builder {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    &--calculator {
+      grid-column: 3;
+      grid-row: 1/3;
+      align-self: center;
+    }
+  }
+}
+```
+
+I put this method with the two rows on a separate branch and the grid area solution on the main branch.
+
 ### Continued development
 
-Overall I learned a lot about css grid and I am excited to continue to learn and build more with it!
+Overall I learned a lot about css grid and I look forward to using grid in more complex layouts in the upcoming projects.
 
 ### Useful resources
 
